@@ -58,4 +58,4 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {<br>
     }<br>
 
 ## 特此鸣谢  
-- [原作者](https://github.com/wenzhimin/BootStepView)
+- [@woxingxiao](https://github.com/wenzhimin/BootStepView)

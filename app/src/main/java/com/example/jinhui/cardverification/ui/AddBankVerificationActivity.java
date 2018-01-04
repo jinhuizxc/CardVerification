@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jinhui.cardverification.R;
 import com.example.jinhui.cardverification.util.BootStepUtils;
@@ -63,8 +64,8 @@ public class AddBankVerificationActivity extends AppCompatActivity {
         mButtonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isCanRegister()){
-                    BootStepUtils.intentToActivityClasss(AddBankVerificationActivity.this,AddBankActivity.class,null);
+                if (isCanRegister()) {
+                    BootStepUtils.intentToActivityClasss(AddBankVerificationActivity.this, AddBankActivity.class, null);
                 }
             }
         });
@@ -76,12 +77,12 @@ public class AddBankVerificationActivity extends AppCompatActivity {
         });
     }
 
-    private Handler mHandler=new Handler(Looper.myLooper()){
+    private Handler mHandler = new Handler(Looper.myLooper()) {
         @Override
         public void handleMessage(Message msg) {
-            switch(msg.what){
+            switch (msg.what) {
                 case CODE_ONE:
-                    mTextViewVerificationCode.setText(i+"秒后重发");
+                    mTextViewVerificationCode.setText(i + "秒后重发");
                     break;
                 case CODE_TWO:
                     mTextViewVerificationCode.setText("重新发送");
@@ -97,7 +98,7 @@ public class AddBankVerificationActivity extends AppCompatActivity {
      */
     private void getVerificationCode() {
         mTextViewVerificationCode.setClickable(false);
-        mTextViewVerificationCode.setText(i+"秒后重发");
+        mTextViewVerificationCode.setText(i + "秒后重发");
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -119,6 +120,7 @@ public class AddBankVerificationActivity extends AppCompatActivity {
 
     /**
      * 判断 输入的验证码 与获取的验证码是否相等
+     *
      * @return
      */
     private boolean isCanRegister() {
@@ -127,8 +129,9 @@ public class AddBankVerificationActivity extends AppCompatActivity {
 //            return false;
 //        }
         if (getCoding().isEmpty()) {
-            mEditTextVerificationCode.setError(Html
-                    .fromHtml("<font color=#E10979>请输入验证码！</font>"));
+            Toast.makeText(mContext, "请先获取验证码", Toast.LENGTH_SHORT).show();
+//            mEditTextVerificationCode.setError(Html
+//                    .fromHtml("<font color=#E10979>请输入验证码！</font>"));
             return false;
         }
 //        if (!code.equals(getCoding())) {
@@ -140,6 +143,7 @@ public class AddBankVerificationActivity extends AppCompatActivity {
 
     /**
      * 获取输入的验证码
+     *
      * @return
      */
     private String getCoding() {
@@ -170,12 +174,12 @@ public class AddBankVerificationActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            String bankPhone=mEditTextVerificationCode.getText().toString();
-            boolean isEmpty = bankPhone.length() > 0 ;
+            String bankPhone = mEditTextVerificationCode.getText().toString();
+            boolean isEmpty = bankPhone.length() > 0;
             if (isEmpty) {
                 mButtonNext.setEnabled(true);
                 mButtonNext.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-            }else{
+            } else {
                 mButtonNext.setEnabled(false);
                 mButtonNext.setBackgroundColor(getResources().getColor(R.color.title_text_color_night));
             }

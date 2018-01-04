@@ -93,13 +93,13 @@ public class BootStepView extends View {
         // 获取高-测量规则的模式和大小
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-        int width=480;
-        int height=240;
+        int width = 480;
+        int height = 240;
         if (widthMode == MeasureSpec.AT_MOST && heightMode == MeasureSpec.AT_MOST) {
             setMeasuredDimension(width, height);
-        } else if (widthMode == MeasureSpec.AT_MOST ) {
+        } else if (widthMode == MeasureSpec.AT_MOST) {
             setMeasuredDimension(width, heightSize);
-        }else if(heightMode== MeasureSpec.AT_MOST){
+        } else if (heightMode == MeasureSpec.AT_MOST) {
             setMeasuredDimension(widthSize, height);
         }
     }

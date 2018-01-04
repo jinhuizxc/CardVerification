@@ -6,11 +6,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jinhui.cardverification.R;
 import com.example.jinhui.cardverification.util.BootStepUtils;
@@ -28,7 +30,7 @@ public class AddBankMessageActivity extends AppCompatActivity {
     private EditText mEditTextBankPhone;
     private TextView mTextViewBankType;
     private Button mButtonNext;
-
+    String bankPhone;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,10 +52,16 @@ public class AddBankMessageActivity extends AppCompatActivity {
         mButtonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putString(BootStepUtils.PHONE_KEY, phoneTextString());
-                BootStepUtils.intentToActivityClasss(AddBankMessageActivity.this,
-                        AddBankVerificationActivity.class, bundle);
+                bankPhone = phoneTextString();
+                if (TextUtils.isEmpty(bankPhone)){
+                    Toast.makeText(mContext, "手机号不能为空", Toast.LENGTH_SHORT).show();
+                }else {
+                    Bundle bundle = new Bundle();
+                    bundle.putString(BootStepUtils.PHONE_KEY, phoneTextString());
+                    BootStepUtils.intentToActivityClasss(AddBankMessageActivity.this,
+                            AddBankVerificationActivity.class, bundle);
+                }
+
             }
         });
     }
@@ -80,7 +88,7 @@ public class AddBankMessageActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            String bankPhone = phoneTextString();
+            bankPhone = phoneTextString();
             boolean isEmpty = bankPhone.length() > 0;
             if (isEmpty && BootStepUtils.checkMobile(bankPhone)) {
                 mButtonNext.setEnabled(true);

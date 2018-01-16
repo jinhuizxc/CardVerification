@@ -16,4 +16,5 @@
     <string name="edit_verification_code">请输入验证码</string>
     <string name="verification_code">获取验证码</string>
     <string name="bt_register_submit">完成</string>
+    <string name="bank_card">银行卡</string>
 </resources>

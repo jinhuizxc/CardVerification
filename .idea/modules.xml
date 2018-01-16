@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CardVerification.iml" filepath="$PROJECT_DIR$/CardVerification.iml" />
+      <module fileurl="file://C:\Users\jinhu\Desktop\CardVerification\CardVerification.iml" filepath="C:\Users\jinhu\Desktop\CardVerification\CardVerification.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\jinhu\Desktop\CardVerification\app\app.iml" filepath="C:\Users\jinhu\Desktop\CardVerification\app\app.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,8 @@
 #  一个添加银行卡操作步骤自定义View,很简单<br>
+
+* 添加了主页：
+ ![]()
+
 ![](https://github.com/wenzhimin/BootStepView/blob/master/apk/bank1.jpg)<br>
 ![](https://github.com/wenzhimin/BootStepView/blob/master/apk/bank2.jpg)<br>
 ![](https://github.com/wenzhimin/BootStepView/blob/master/apk/bank3.jpg)<br>
@@ -59,3 +63,4 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {<br>
 
 ## 特此鸣谢  
 - [@woxingxiao](https://github.com/wenzhimin/BootStepView)
+- [@lichao3140](https://github.com/lichao3140/BankCard)

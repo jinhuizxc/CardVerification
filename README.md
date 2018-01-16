@@ -1,7 +1,7 @@
 #  一个添加银行卡操作步骤自定义View,很简单<br>
 
 * 添加了主页：
- ![](https://github.com/jinhuizxc/CardVerification/blob/master/shots/home.jpg)
+![](https://github.com/jinhuizxc/CardVerification/blob/master/shots/home.jpg)<br>
 
 ![](https://github.com/wenzhimin/BootStepView/blob/master/apk/bank1.jpg)<br>
 ![](https://github.com/wenzhimin/BootStepView/blob/master/apk/bank2.jpg)<br>
